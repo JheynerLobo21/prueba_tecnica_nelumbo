@@ -133,7 +133,7 @@ export const BasicDataProduct = () => {
               className="background-image"
             />
             <div className="content">
-              <div style={{ marginLeft: "" }}>
+              <div style={{ width:"400px" }}>
                 <h3 style={{ fontStyle: "italic" }}>
                   Lleva este {selectedProduct.tipo}
                 </h3>

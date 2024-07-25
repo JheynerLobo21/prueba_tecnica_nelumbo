@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useFilter } from '../../../Contexts/FilterContext'; 
-import '/src/css/filters.css';
+import { useState, useEffect } from "react";
+import { useFilter } from "../../../Contexts/FilterContext";
+import "/src/css/filters.css";
 
 export const RangePrices = () => {
   const { setMinPrice, setMaxPrice } = useFilter();
@@ -25,7 +25,7 @@ export const RangePrices = () => {
   }, [minPrice, maxPrice, setMinPrice, setMaxPrice]);
 
   return (
-    <div className='range-prices'>
+    <div className="range-prices">
       <input
         type="number"
         className="min-price"

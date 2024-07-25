@@ -15,6 +15,7 @@
     color: #0047BB;
     z-index: 2;
     margin-left: -70px;
+    margin-top: 25px;
 }
 
 .trapezoid {
@@ -98,5 +99,5 @@ align-items: center;
     background: gold;
     align-self: flex-end;
     color: #0047BB;
-    margin-top: -20px;
+    margin-top: -30px;
 }

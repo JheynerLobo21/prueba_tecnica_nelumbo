@@ -146,7 +146,7 @@
 .end-promo {
     display: flex;
     color: red;
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: 10px;
     align-self: flex-end;
 }
@@ -159,7 +159,7 @@
 .value-especificacations {
     position: absolute;
     width: 300px;
-    left: 80%;
+    left: 30%;
     font-weight: bold;
 }
 
@@ -205,7 +205,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 5%;
+    margin-right: 13%;
     padding: 25px 25px;
 }
 

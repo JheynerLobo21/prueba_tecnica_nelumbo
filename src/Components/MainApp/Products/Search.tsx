@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import { Input, Select } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import '/src/css/main-page.css';
-import { useFilter } from '../../../Contexts/FilterContext'; // Asegúrate de importar tu contexto de filtro
+import { useFilter } from '../../../Contexts/FilterContext';
 
 const { Option } = Select;
 
 export const Search = () => {
-  const { setSearchName, setCategory } = useFilter(); // Añade setSearchName y setCategory a tu contexto
+  const { setSearchName, setCategory } = useFilter();
   const [searchValue, setSearchValue] = useState('');
   const [category, setCategoryValue] = useState('todas');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    setSearchName(e.target.value); // Actualiza el valor de búsqueda en el contexto
+    setSearchName(e.target.value);
   };
 
   const handleCategoryChange = (value: string) => {
     setCategoryValue(value);
-    setCategory(value); // Actualiza la categoría en el contexto
+    setCategory(value);
   };
 
   const prefix = (

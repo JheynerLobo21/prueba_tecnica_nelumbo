@@ -57,3 +57,12 @@
   position: relative;
 }
 
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after, :where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected::after{
+  border-bottom-color: transparent;
+}
+
+.ant-menu-title-content{
+ color: black;
+}
+
+

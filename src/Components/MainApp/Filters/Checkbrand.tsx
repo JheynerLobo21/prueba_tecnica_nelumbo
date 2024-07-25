@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { products } from '../../../Constants/Constants';
-import { Categorias } from '../../../Constants/Constants';
-import { Checkbox } from 'antd';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
-import { useFilter } from '../../../Contexts/FilterContext'; // Importar el contexto
-import '/src/css/filters.css';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { products } from "../../../Constants/Constants";
+import { Categorias } from "../../../Constants/Constants";
+import { Checkbox } from "antd";
+import type { CheckboxChangeEvent } from "antd/es/checkbox";
+import { useFilter } from "../../../Contexts/FilterContext"; // Importar el contexto
+import "/src/css/filters.css";
 
 export const Checkbrand = () => {
   const location = useLocation();
@@ -15,7 +15,9 @@ export const Checkbrand = () => {
   useEffect(() => {
     const category = location.pathname.split("/")[1] as keyof Categorias;
     const productos = products[category] || [];
-    const uniqueBrands = [...new Set(productos.map(producto => producto.marca))];
+    const uniqueBrands = [
+      ...new Set(productos.map((producto) => producto.marca)),
+    ];
     setBrands(uniqueBrands);
   }, [location.pathname]);
 
@@ -25,13 +27,13 @@ export const Checkbrand = () => {
       if (e.target.checked) {
         return [...prevBrands, brand];
       } else {
-        return prevBrands.filter(b => b !== brand);
+        return prevBrands.filter((b) => b !== brand);
       }
     });
   };
 
   return (
-    <div className='checks'>
+    <div className="checks">
       {brands.map((brand, index) => (
         <Checkbox
           key={index}
