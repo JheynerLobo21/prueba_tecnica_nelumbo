@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .wave-container {
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+  }
+  
+  .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/public/wave.png') no-repeat,
+    url('/public/wave-1.png') no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .content{
+    display: flex;
+    margin-top: 50px;
+  }
+  
+  .content-1 {
+    position: relative;
+    padding-top: 60px; 
+    padding-left: 40px;
+    z-index: 2;
+    text-align: start;
+    color: white; 
+    width: 45%;
+  }
+
+  .smile{
+    position: relative;
+    padding-top: 200px;
+    padding-left: 80px;
+    z-index: 2;
+  }
+
+  .input-email{
+    background-color: transparent;
+    border-left: transparent;
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: 2px solid black;
+    color: black;
+  }
+
+  .input-email:hover, .input-email:focus, .input-email:active{
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    border-left: transparent;
+    border-top: transparent;
+    border-right: transparent;
+  }
+  
+  .data-adicional{
+    margin-top: 30px;
+    display: flex;
+    column-gap: 40px;
+    font-size: 12px;
+    color: #0047BB;
+    align-items: center;
+  }
+
+  .content-3{
+    position: relative;
+    padding-top: 150px;
+    padding-left: 100px;
+    z-index: 1;
+    color: #082149;
+    font-weight: bold;
+  }
+
+  .redes{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 10px;
+    font-size: 30px;
+  }

@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+.main-category {
+    display: flex;
+}
+
+.group-products {
+    width: 60%;
+}
+
+.search {
+    width: 30% ;
+    margin-left: 45px;
+    margin-top: 25px;
+}
+
+.list-of-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+    padding: 0;
+    margin-left: 40px;
+  }
+
+.item-product {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 5px;
+    position: relative;
+}
+
+.name-product{
+    font-weight: bold;
+}
+
+.name-price-week{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.details-product{
+    display: flex;
+    position: relative;
+}
+
+.floating-button {
+    position: absolute;
+    bottom: 180px; 
+    left: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.favorite{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+    z-index: 1000;
+    font-size: 20px;
+}
+
+  :where(.css-dev-only-do-not-override-1uq9j6g).ant-float-btn-default .ant-float-btn-body{
+    background-color: #c033b9;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-float-btn-default .ant-float-btn-body .ant-float-btn-content .ant-float-btn-icon{
+    color: white;
+    font-size: 22px;
+    margin-right: 20px
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-card-hoverable{
+    width: 300px;
+}
+
+.price-desc{
+    font-size: 12px;
+}
+
+.price-final{
+    margin-top: -7px;
+    color: #0047BB;
+}
+
+.price-want{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    right: 0px
+}
+
+.price-total{
+    margin-top: -25px;
+    text-decoration: line-through;
+}
+
+.btn-i-want{
+    position: absolute;
+    top: 65px;
+    background-color: gold;
+    border: 1px solid gold;
+    color: #0047BB;
+}

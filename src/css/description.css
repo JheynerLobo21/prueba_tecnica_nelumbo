@@ -1,0 +1,231 @@
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 25px;
+    margin-top: 20px;
+}
+
+
+
+.floating-button-description{
+    position: absolute;
+    bottom: 60px; 
+    left: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.favorite{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+    z-index: 1000;
+    font-size: 20px;
+}
+
+.basic-data{
+    display: flex;
+    gap: 10px;
+}
+
+.imgs-test{
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.imgs-test-description{
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 550px;
+    align-items: center;
+    justify-items: center;
+}
+
+.catalog-img{
+    margin-top: 10px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog-img-description{
+    margin-top: 10px;
+    background-color: white;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-principal{
+    margin-top: 10px;
+    position: relative;
+    height: 460px;
+    width: 350px;
+    background: white;
+    border-radius: 5px;
+}
+
+.imgs-products{
+    width: 90px;
+    height: 90px;
+}
+
+.imgs-products-description{
+    width: 200px;
+    height: 250px;
+}
+
+.aside-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    width: 55%;
+}
+
+.data-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.second-data {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.payment-images {
+    display: flex;
+    gap: 5px;
+}
+.description-product {
+    margin-top: 20px;
+    width: 95%;
+}
+
+.see-more {
+    color: blue;
+    margin-top: -15px;
+    font-style: italic;
+}
+
+.buy-security {
+    display: flex;
+    align-items: center;
+    background: #acabab;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.end-promo {
+    display: flex;
+    color: red;
+    margin-top: 20px;
+    font-size: 10px;
+    align-self: flex-end;
+}
+
+.shield {
+    width: 20px;
+    height: 20px;
+}
+
+.value-especificacations {
+    position: absolute;
+    width: 300px;
+    left: 80%;
+    font-weight: bold;
+}
+
+.credit{
+    display: flex;
+    flex-direction: column;
+}
+.card-credit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; 
+  }
+  
+  .content {
+    z-index: 4; 
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+    color: black; 
+}
+
+.card-info-credit{
+    z-index: -3;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    padding: 25px 25px;
+}
+
+.back{
+    margin-left: 60px;
+}
+
+.btn-credit{
+    margin-top: 5px;
+    background: gold;
+    color: #0047BB;
+}
+
+.title-related{
+    display: flex;
+    justify-content: center;
+}
+
+.related{
+    position: absolute;
+    display: grid;
+   grid-template-columns: repeat(minmax(200px, 1fr));
+}

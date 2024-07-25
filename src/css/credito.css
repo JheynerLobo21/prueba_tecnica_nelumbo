@@ -1,0 +1,102 @@
+.figures{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    background: gold;
+    border-radius: 50%;
+    width: 140px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0047BB;
+    z-index: 2;
+    margin-left: -70px;
+}
+
+.trapezoid {
+    width: 150px;
+    height: 140px;
+    background-color: #0047BB;
+    clip-path: polygon(0 100%, 0 60px, 100% 0px, 100% 100%);
+    border-radius: 15px;
+    border-top-left-radius: 10px;
+    z-index: 1;
+    margin-left: -60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.price-week, .price-week2{
+    margin-left: 60px;
+    color: white;
+}
+
+.price-week{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.price-week2{
+    margin-top: -30px;
+    text-align: end;
+}
+
+
+
+.data-credit{
+    display: flex;
+    background: white;
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.item-data-credit{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    padding: 5px 10px;
+    row-gap: 10px;
+}
+
+.id-item-credit{
+padding:5px; 
+background:gray;
+color:white;
+border-radius:50%;
+width: 25px;
+height: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.to-credit{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 2%;
+}
+
+.icon-credit{
+    float: left;
+    z-index: -1;
+}
+
+.want-credit{
+    width: fit-content;
+    height: 40px;
+    background: gold;
+    align-self: flex-end;
+    color: #0047BB;
+    margin-top: -20px;
+}

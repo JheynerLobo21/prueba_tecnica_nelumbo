@@ -1,0 +1,55 @@
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-modal .ant-modal-content{
+    width:350px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.img-banner{
+    width: 100%;
+}
+
+.basic-data{
+    display: flex;
+}
+
+.img-product-modal{
+    width: 55px;
+    height: auto;
+}
+
+.description-product{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.credit-buy{
+    background-color: gold;
+    border: 1px solid gold;
+    color: #0047BB; 
+}
+
+.tipe-buy{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-check{
+    width: 40px;
+    height: auto;
+}
+
+.ant-modal-footer button{
+    display: none;
+}
+
+.contado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 71, 187);
+    font-weight: bold;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,59 @@
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 10px;
+  background-color: #0047BB;
+}
+
+.logo{
+  margin-left: 5vw;
+}
+
+.group-btn-access{
+  width: 100%;
+  position: absolute;
+  left: 65vw;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.btn-create-account, .btn-login{
+  width: 100px;
+  height: 40px;
+}
+
+.btn-create-account{
+  background-color: gold;
+  border: 1px solid gold;
+  color: #0047BB;
+}
+
+.btn-login{
+  background-color: transparent;
+  border: none;
+  color: gold;
+}
+
+.icon-cart{
+  color: #0047BB;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected:hover::after{
+  border-bottom-color: transparent;
+}
+
+.first-item-list:active, .item-list:active{
+  color: #0047BB;
+}
+
+.first-item-list{
+  margin-left: 5vw;
+  position: relative;
+}
+
