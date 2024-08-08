@@ -6,17 +6,20 @@ import { ProductCatalogShop } from './Components/MainApp/ProductCatalogShop';
 import { Home } from './Components/MainApp/Home';
 import { FilterProvider } from './Contexts/FilterContext';
 import { FavoritesProvider } from './Contexts/FavoriteContext';
+import { CategoryProvider } from './Contexts/CategoryContext';
 
 function App() {
   return (
     <>
-    <ProductProvider>
-    <FilterProvider>
+      <ProductProvider>
+      <FilterProvider>
       <FavoritesProvider>
-      <Routes>
+      <CategoryProvider>
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:category" element={<ProductCatalogShop />} />
-      </Routes>
+       </Routes>
+      </CategoryProvider>
       </FavoritesProvider>
       </FilterProvider>
       </ProductProvider>

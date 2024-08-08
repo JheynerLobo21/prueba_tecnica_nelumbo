@@ -177,7 +177,7 @@ export const BasicDataProduct = () => {
         </section>
       </div>
       <h5 className="title-related">Productos relacionados</h5>
-      <div>
+      <div style={{marginLeft:"20px", marginRight:"60px"}}>
         <Products />
       </div>
     </div>

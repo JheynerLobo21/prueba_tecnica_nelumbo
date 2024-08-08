@@ -19,8 +19,6 @@ export const ListMenu: React.FC = () => {
   const { resetFilters } = useFilter();
   const navigate = useNavigate();
   const [categories, setCategories] = useState<Categories[]>([]);
-  const pathName = window.location.pathname.slice(1);
-  console.log(pathName);
   const handleClick = (path: string) => {
     navigate(path);
     resetFilters();

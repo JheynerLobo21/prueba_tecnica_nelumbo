@@ -1,6 +1,6 @@
-import { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useState } from 'react';
 
-interface Categories {
+interface Category {
   id: number;
   name: string;
   imagen: string;
@@ -9,16 +9,17 @@ interface Categories {
 }
 
 interface CategoryContextType {
-  categories: Categories[] | null;
-  setCategories: (categories: Categories[]) => void;
+  categories: Category[] | null;
+  setCategories: (categories: Category[] | null) => void;
 }
 
-export const CategoryContext = createContext<CategoryContextType | undefined>(
-  undefined
-);
+export const CategoryContext = createContext<CategoryContextType | undefined>({
+  categories: null,
+  setCategories:()=>{}
+});
 
 export const CategoryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [categories, setCategories] = useState<Categories[] | null>(null);
+  const [categories, setCategories] = useState<Category[] | null>(null);
 
   return (
     <CategoryContext.Provider value={{ categories, setCategories }}>

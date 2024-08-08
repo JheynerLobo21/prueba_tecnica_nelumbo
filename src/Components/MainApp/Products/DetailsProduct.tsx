@@ -50,7 +50,7 @@ export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
         </span>
         <Rate
           allowHalf
-          defaultValue={reviews}
+          defaultValue={producto.reviews}
           disabled
           style={{ marginBottom: "10px", fontSize: "16px" }}
         />

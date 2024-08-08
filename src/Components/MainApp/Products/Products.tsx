@@ -266,12 +266,11 @@ import { useFilter } from "../../../Contexts/FilterContext";
 
 export const Products: React.FC = () => {
   const pathName = window.location.pathname.split("/")[1];
-  console.log(pathName);
   const { setSelectedProduct } = useContext(ProductContext);
   const { favoriteProducts, toggleFavorite } = useFavorites();
+  console.log(Object.values(favoriteProducts));
   const [adaptedProducts, setAdaptedProducts] = useState<AdaptedProduct[]>([]);
-  const { searchName} = useFilter();
-
+  const { minPrice, maxPrice, selectedStars, order, searchName } = useFilter();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -280,7 +279,7 @@ export const Products: React.FC = () => {
           ...product,
           marcas: "marcaPrueba",
           tipo: "tipoPrueba",
-          reviews: 3.5,
+          reviews: Math.round(Math.random() * 5),
           fabricante: "Samsung Electronics",
           peso: "150 gr",
           dimensiones: "16 x 8 x 0.7 cm",
@@ -293,10 +292,14 @@ export const Products: React.FC = () => {
           componentesIncluidos: "Manual de usuario, cargador, audífonos",
           promocion: 40,
           precio: 4000,
-          precioSemanal:10,
-          precioMensual:15
+          precioSemanal: 10,
+          precioMensual: 15,
         }));
-        setAdaptedProducts(adaptedProducts.filter(product=>product.category.name===pathName.replace("-", " ")));
+        setAdaptedProducts(
+          adaptedProducts.filter(
+            (product) => product.category.name === pathName.replace("-", " ")
+          )
+        );
         console.log(adaptedProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -307,14 +310,40 @@ export const Products: React.FC = () => {
     console.log(adaptedProducts);
   }, [pathName]);
 
-  const filteredProducts = adaptedProducts
-    .filter(
-      (producto) =>
-        searchName === "" ||
-        producto.nombre.toLowerCase().includes(searchName.toLowerCase())
-    );
+  const filteredProducts = adaptedProducts.filter((producto) => {
+    const precioFinal = producto.price;
+    return precioFinal >= minPrice && precioFinal <= maxPrice;
+  }).filter(
+    (producto) =>
+      selectedStars === 0 ||
+      producto.reviews === selectedStars ||
+      selectedStars === null
+  ).filter(
+    (producto) =>
+      searchName === "" ||
+      producto.title.toLowerCase().includes(searchName.toLowerCase())
+  );
 
 
+  const sortProducts = (products: AdaptedProduct[]): AdaptedProduct[] => {
+    if (order === "reviews") {
+      return products.sort((a, b) => b.reviews - a.reviews);
+    }
+    if (order === "precio") {
+      return products.sort((a, b) => a.price - b.price);
+    }
+    order === "favoritos"
+    ? adaptedProducts.filter((products) => favoriteProducts.has(products.id))
+    : adaptedProducts;
+    return products;
+  };
+
+  const sortedProducts = sortProducts(filteredProducts);
+
+  order === "favoritos"
+      ? sortedProducts.filter((updatedProducts) => favoriteProducts.has(updatedProducts.id))
+      : sortedProducts;
+  
   const handleClickDescription = (adaptedProducts: Product) => {
     const promocionNumerica = adaptedProducts.promocion || 0;
     const precioFinal =
@@ -324,14 +353,19 @@ export const Products: React.FC = () => {
     const precioMensual = precioFinal * 0.15;
     const precioSemanal = Math.round((precioFinal * 0.15) / 4);
 
-    setSelectedProduct(adaptedProducts, precioFinal, precioMensual, precioSemanal);
+    setSelectedProduct(
+      adaptedProducts,
+      precioFinal,
+      precioMensual,
+      precioSemanal
+    );
   };
 
   return (
     <div>
-      {filteredProducts.length > 0 ? (
+      {sortedProducts.length > 0 ? (
         <ul className="list-of-products">
-          {adaptedProducts.map((product, index: number) => {
+          {sortedProducts.map((product, index: number) => {
             const isFavorite = favoriteProducts.has(product.id);
 
             return (
@@ -339,7 +373,9 @@ export const Products: React.FC = () => {
                 <Space>
                   {isFavorite ? (
                     <HeartFilled
-                      className={`favorite ${isFavorite ? "favorite-active" : ""}`}
+                      className={`favorite ${
+                        isFavorite ? "favorite-active" : ""
+                      }`}
                       onClick={() => toggleFavorite(product.id)}
                       style={{ fontSize: "28px", color: "skyblue" }}
                     />
@@ -368,8 +404,7 @@ export const Products: React.FC = () => {
                       icon={`${product.promocion}%`}
                     />
                   )}
-                  <DetailsProduct 
-                    producto={product}/>
+                  <DetailsProduct producto={product} />
                 </Card>
               </li>
             );

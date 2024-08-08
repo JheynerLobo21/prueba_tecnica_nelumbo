@@ -13,6 +13,7 @@ export const Search = () => {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
+    console.log(searchValue);
     setSearchName(e.target.value);
   };
 
