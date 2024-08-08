@@ -21,9 +21,9 @@
   }
 
 .favorite{
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    margin-bottom: 370px;
+    margin-right: -40px;
     color: black;
     z-index: 1000;
     font-size: 20px;
@@ -76,10 +76,18 @@
 .img-principal{
     margin-top: 10px;
     position: relative;
-    height: 460px;
-    width: 350px;
+    height: 430px;
+    width: 300px;
     background: white;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-img{
+    width: 280px;
+    height: 400px;
 }
 
 .imgs-products{
@@ -122,13 +130,13 @@
     gap: 5px;
 }
 .description-product {
-    margin-top: 20px;
+    margin:0;
     width: 95%;
 }
 
 .see-more {
     color: blue;
-    margin-top: -15px;
+    margin-top: -5px;
     font-style: italic;
 }
 

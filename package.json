@@ -13,6 +13,8 @@
     "@ant-design/icons": "^5.4.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
     "antd": "^5.19.3",

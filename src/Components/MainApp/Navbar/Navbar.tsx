@@ -1,6 +1,5 @@
 import { Button } from 'antd';
 import '/src/App.css'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 export const Navbar = () => {
   return (
     <div className='navbar'>
@@ -8,7 +7,13 @@ export const Navbar = () => {
         <div className='group-btn-access'>
             <Button className='btn-create-account'>Crea Tu Cuenta</Button>
             <Button className='btn-login'>Iniciar Sesión</Button>
-            <ShoppingCartIcon className='icon-cart'/>
+           <div className='icon-cart'>
+            <img src="/public/shopping_cart.png" alt="" width="24px" height="24px"/>
+           </div>
+        </div>
+        <div className='circle-buy'>
+          <p className='buy-credit'>COMPRAR A</p>
+          <p className='buy-credit2'>CRÉDITO</p>
         </div>
     </div>
   )

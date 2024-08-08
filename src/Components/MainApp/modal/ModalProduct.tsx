@@ -1,18 +1,18 @@
 import { Modal, Divider, Button } from "antd";
 import React, { useState } from "react";
-import { Product } from "../../../Constants/Constants";
+import { AdaptedProduct } from "../../../types/InterfacesProducts";
 import "/src/css/modal.css";
 
 interface ModalProductProps {
-  producto: Product;
-  precioFinal: number;
+  producto: AdaptedProduct;
+  precioOriginal: number;
   precioSemanal: number;
   onClose: () => void;
 }
 
 export const ModalProduct: React.FC<ModalProductProps> = ({
   producto,
-  precioFinal,
+  precioOriginal,
   precioSemanal,
   onClose,
 }) => {
@@ -33,11 +33,11 @@ export const ModalProduct: React.FC<ModalProductProps> = ({
         />
         <div className="basic-data">
           <img
-            src="/public/redmiNote11-2.png"
-            alt={producto.nombre}
+            src={producto.images[0]}
+            alt={producto.title}
             className="img-product-modal"
           />
-          <aside className="description-product">
+          <aside className="description-prod">
             <span
               style={{
                 position: "absolute",
@@ -45,7 +45,7 @@ export const ModalProduct: React.FC<ModalProductProps> = ({
                 color: "#0047BB",
                 fontWeight: "bold",
               }}
-            >{`$${precioFinal} x 1`}</span>
+            >{`$${precioOriginal} x 1`}</span>
             <span
               style={{
                 fontWeight: "bold",
@@ -54,7 +54,7 @@ export const ModalProduct: React.FC<ModalProductProps> = ({
                 marginTop: "17px",
               }}
             >
-              {producto.nombre}
+              {producto.title}
             </span>
             <div style={{ display: "flex" }}>
               <label>Color seleccionado: </label>
@@ -74,7 +74,7 @@ export const ModalProduct: React.FC<ModalProductProps> = ({
             color: "#0047BB",
             fontWeight: "bold",
           }}
-        >{`${precioFinal} x 1`}</label>
+        >{`${precioOriginal} x 1`}</label>
         <Divider style={{ marginTop: "10px" }} />
         <div className="tipe-buy">
           <img

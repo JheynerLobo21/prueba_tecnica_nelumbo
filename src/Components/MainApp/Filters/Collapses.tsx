@@ -1,12 +1,10 @@
-// Collapses.tsx
-import React from "react";
 import type { CollapseProps } from "antd";
 import { Collapse, Rate } from "antd";
 import { Checkbrand } from "./Checkbrand";
 import { RangePrices } from "./RangePrices";
 import { useFilter } from "../../../Contexts/FilterContext";
 
-const RateFilter: React.FC = () => {
+const RateFilter = () => {
   const { selectedStars, setSelectedStars } = useFilter();
 
   const handleChange = (value: number) => {
@@ -39,12 +37,12 @@ const items: CollapseProps["items"] = [
   },
 ];
 
-export const Collapses: React.FC = () => {
+export const Collapses = () => {
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
 
   return (
-    <Collapse defaultActiveKey={["1"]} onChange={onChange} items={items} />
+    <Collapse defaultActiveKey={["1"]} onChange={onChange} items={items} style={{color:"#013E9B"}}/>
   );
 };

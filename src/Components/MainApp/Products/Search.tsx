@@ -31,8 +31,8 @@ export const Search = () => {
   );
 
   const selectAfter = (
-    <Select value={category} onChange={handleCategoryChange} style={{ width: 120 }}>
-      <Option value="todas">Todas</Option>
+    <Select value={category} onChange={handleCategoryChange}  className='slt-search'>
+      <Option value="todas">Todas las categorias</Option>
       <Option value="celulares">Celulares</Option>
       <Option value="computadores">Computadores</Option>
       <Option value="motocicletas">Motocicletas</Option>
@@ -42,6 +42,7 @@ export const Search = () => {
   return (
     <div className='search'>
       <Input
+       className='input-search'
         prefix={prefix}
         addonAfter={selectAfter}
         placeholder='Buscar producto'

@@ -12,7 +12,7 @@ import { Products } from "../MainApp/Products/Products";
 export const BasicDataProduct = () => {
   const { selectedProduct, precioFinal, precioMensual, precioSemanal } = useContext(ProductContext);
   const { favoriteProducts, toggleFavorite } = useFavorites();
-
+  console.log(selectedProduct)
   if (!selectedProduct) {
     return <div>No product selected</div>;
   }
@@ -63,8 +63,8 @@ export const BasicDataProduct = () => {
             )}
           </Space>
           <img
+            className="main-img"
             alt="example"
-            style={{ height: "450px", width: "280px" }}
             src={selectedProduct.images[0]}
           />
           {selectedProduct.promocion !== 0 && (
@@ -77,7 +77,7 @@ export const BasicDataProduct = () => {
         <aside className="aside-data">
           <div className="data-price">
             <div className="first-data">
-              <h2>{selectedProduct.nombre}</h2>
+              <h2>{selectedProduct.title}</h2>
               <Rate
                 allowHalf
                 defaultValue={selectedProduct.reviews}
@@ -88,7 +88,7 @@ export const BasicDataProduct = () => {
             <div className="second-data">
               <h2 style={{ marginBottom: "0px" }}>{`$${precioFinal}`}</h2>
               <span style={{ textDecoration: "line-through" }}>
-                {selectedProduct.promocion !== 0 && selectedProduct.precio}
+                {selectedProduct.promocion !== 0 && selectedProduct.price}
               </span>
               <br />
               <div className="payment-images">
@@ -99,7 +99,7 @@ export const BasicDataProduct = () => {
               </div>
             </div>
           </div>
-          <p className="description-product">{selectedProduct.descripcion}</p>
+          <p className="description-product" style={{fontSize:"12px", fontFamily:"sans-serif"}}>{selectedProduct.description}</p>
           <label className="see-more">- ver más -</label>
           <div className="buy-security">
             <img

@@ -4,14 +4,13 @@ import { products } from "../../../Constants/Constants";
 import { Categorias } from "../../../Constants/Constants";
 import { Checkbox } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
-import { useFilter } from "../../../Contexts/FilterContext"; // Importar el contexto
+import { useFilter } from "../../../Contexts/FilterContext";
 import "/src/css/filters.css";
 
 export const Checkbrand = () => {
   const location = useLocation();
   const [brands, setBrands] = useState<string[]>([]);
-  const { selectedBrands, setSelectedBrands } = useFilter(); // Usar el contexto
-
+  const { selectedBrands, setSelectedBrands } = useFilter();
   useEffect(() => {
     const category = location.pathname.split("/")[1] as keyof Categorias;
     const productos = products[category] || [];

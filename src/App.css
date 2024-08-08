@@ -29,6 +29,7 @@
   background-color: gold;
   border: 1px solid gold;
   color: #0047BB;
+  
 }
 
 .btn-login{
@@ -42,6 +43,8 @@
   background-color: white;
   border-radius: 50%;
   padding: 5px;
+  height: 30px;
+  width: 30px;
 }
 
 :where(.css-dev-only-do-not-override-1uq9j6g).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected:hover::after{
@@ -63,6 +66,40 @@
 
 .ant-menu-title-content{
  color: black;
+}
+
+.circle-buy{
+  position: absolute;
+  border-radius: 50%;
+  background-color: #D2AE00;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  right:-5%;
+  top: -17%;
+  box-shadow: 0 0 25px #494444;
+}
+
+.buy-credit, .buy-credit2{
+  color: white;
+  margin-top: 150px;
+  margin-right: 20px;
+  rotate: 45deg;
+}
+
+.buy-credit2{
+  font-size: 25px;
+  margin-top: -25px;
+  margin-right: 60px;
+}
+
+@media (max-width:720px){
+  .circle-buy{
+    width: 180px;
+    height: 180px;
+    top: -10%;
+    right: -10%;
+  }
 }
 
 

@@ -14,10 +14,11 @@
 
 .img-product-modal{
     width: 55px;
-    height: auto;
+    height: 70px;
+    margin-left: 10px;
 }
 
-.description-product{
+.description-prod{
     display: flex;
     flex-direction: column;
     width: 75%;

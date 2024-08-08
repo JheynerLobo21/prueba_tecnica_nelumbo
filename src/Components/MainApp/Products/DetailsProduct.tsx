@@ -1,30 +1,24 @@
-import { Product } from "../../../Constants/Constants";
 import { Rate, Button } from "antd";
 import "/src/css/main-page.css";
 import { useContext, useState } from "react";
 import { ModalProduct } from "../modal/ModalProduct";
 import { ProductContext } from "../../../Contexts/ProductContext";
+import { AdaptedProduct } from "../../../types/InterfacesProducts";
 
 interface DetailsProductProps {
-  producto: Product & {
-    precioFinal: number;
-    precioMensual: number;
-    precioSemanal: number;
-  };
+  producto: AdaptedProduct;
 }
 
 export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
-  const { setSelectedProduct } = useContext(ProductContext);
-
+  const { setSelectedProduct} = useContext(ProductContext);
   const [openModal, setOpenModal] = useState(false);
-
+  console.log(producto);
   const {
-    nombre,
+    title,
     reviews,
     promocion = 0,
-    precioFinal,
-    precioMensual,
     precioSemanal,
+    precioMensual
   } = producto;
 
   const handleClickModal = () => {
@@ -36,19 +30,23 @@ export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
   };
 
   const handleClickDescription = () => {
-    setSelectedProduct(producto, precioFinal, precioMensual, precioSemanal);
+    setSelectedProduct(producto);
   };
+
+  
 
   const precioOriginal =
     promocion !== 0
-      ? ((precioFinal * (100 + promocion)) / 100).toFixed(2)
+      ? ((producto.price * (100 + promocion)) / 100).toFixed(2)
       : undefined;
+
+ 
 
   return (
     <div className="details-product">
       <div className="name-price-week">
         <span className="name-product" onClick={handleClickDescription}>
-          {nombre}
+          {title}
         </span>
         <Rate
           allowHalf
@@ -60,7 +58,7 @@ export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
         <span className="price-desc">{`o $${precioMensual} p/mes`}</span>
       </div>
       <div className="price-want">
-        <h1 className="price-final">${precioFinal}</h1>
+        <h1 className="price-final">${producto.price}</h1>
         {precioOriginal && (
           <label className="price-total">{`$${precioOriginal}`}</label>
         )}
@@ -71,7 +69,7 @@ export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
       {openModal && (
         <ModalProduct
           producto={producto}
-          precioFinal={precioFinal}
+          precioOriginal={precioOriginal}
           precioSemanal={precioSemanal}
           onClose={handleCloseModal}
         />

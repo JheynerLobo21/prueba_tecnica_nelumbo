@@ -27,15 +27,15 @@ body, html {
 }
 
 .search {
-    width: 30% ;
+    width: 37% ;
     margin-left: 45px;
     margin-top: 25px;
 }
 
 .list-of-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
     padding: 0;
     margin-left: 40px;
   }
@@ -78,8 +78,8 @@ body, html {
 .favorite{
     position: absolute;
     top: 20px;
-    right: 20px;
-    color: black;
+    left: 250px;
+    color: #7D879C;
     z-index: 1000;
     font-size: 20px;
 }
@@ -122,8 +122,58 @@ body, html {
 
 .btn-i-want{
     position: absolute;
-    top: 90px;
+    top: 60px;
     background-color: gold;
     border: 1px solid gold;
     color: #0047BB;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover{
+    background-color: #0047BB;
+    border: 1px solid #0047BB;
+    color: gold;
+}
+
+.input-search{
+    width: 120%;
+}
+
+.slt-search{
+    width: fit-content;
+    background-color: #b4b4b4;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+    border-start-start-radius: 30px;
+    border-end-start-radius: 30px;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-input-group .ant-input-group-addon .ant-select{
+    border-end-end-radius: 50%;
+    border-start-end-radius: 50%;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-input-group .ant-input-group-addon .ant-select.ant-select-single:not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector, :where(.css-dev-only-do-not-override-1uq9j6g).ant-input-group-wrapper-outlined .ant-input-group-addon:last-child{
+    border-radius: 0 25px 25px 0;
+}
+
+.ant-card-cover{
+    padding: 10px 10px 20px 10px;
+}
+
+@media (max-width:768px){
+    .main-category {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .list-of-products{
+        margin: 0;
+    }
+    .search{
+        margin-left: 0;
+    }
+
+    
 }

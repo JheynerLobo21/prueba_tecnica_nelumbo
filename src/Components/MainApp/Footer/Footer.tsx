@@ -1,7 +1,6 @@
 import "/src/css/footer.css";
 import { Input } from "antd";
 import {
-  SendOutlined,
   FacebookOutlined,
   InstagramOutlined,
   LinkedinOutlined,
@@ -25,15 +24,7 @@ export const Footer = () => {
           <Input
             placeholder="Tú dirección de correo electrónico"
             suffix={
-              <SendOutlined
-                style={{
-                  color: "#0047BB",
-                  rotate: "-50deg",
-                  fontSize: "28px",
-                  marginBottom: "3px",
-                  marginTop: "-5px",
-                }}
-              />
+              <img src="/public/paper-plane-solid.svg" alt="" width="24px"/>
             }
             className="input-email"
           />
