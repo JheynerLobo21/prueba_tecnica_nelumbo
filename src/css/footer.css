@@ -6,6 +6,7 @@ body, html {
   
   .wave-container {
     position: relative;
+    margin-top: 40px;
     width: 100%;
     height: 400px; 
     overflow: hidden;

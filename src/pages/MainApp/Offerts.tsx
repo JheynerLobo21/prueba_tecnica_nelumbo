@@ -1,25 +1,27 @@
 import { Carousel } from "antd";
+import '/src/css/main-page.css';
 
 const contentStyle: React.CSSProperties = {
-  height: "300px",
+  height: "400px",
   color: "#fff",
   textAlign: "center",
   background: "#364d79",
-  width: "800px",
+  width: "100%",
   marginBottom: "20px",
-  borderRadius: "5px",
+  borderRadius: "8px",
+  margin:"auto"
 };
 export const Offerts = () => {
   return (
     <div>
-      <h3 style={{ textAlign: "center" }}>Ofertas y Promociones</h3>
+      <h3 style={{ textAlign: "center", margin:"40px 0 30px 0" }}>Ofertas y Promociones</h3>
       <div className="carrusel">
-      <Carousel arrows infinite={true}>
+      <Carousel arrows infinite={true} dots={true}>
         <div>
           <img
             style={contentStyle}
             src="https://www.cashfresh.es/wp-content/uploads/2023/03/bbll-de-los-superdescuentos-de-cash-fresh-bollullos-par-del-condado-2-845x321.jpg"
-            alt=""
+            alt="img-0"
           />
         </div>
 

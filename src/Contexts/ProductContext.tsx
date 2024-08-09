@@ -1,6 +1,6 @@
 import React, { createContext, useState, ReactNode, useEffect } from 'react';
-import { AdaptedProduct } from '../Utils/types/InterfacesProducts'; 
-import { getProducts } from '../services/products'; 
+import { AdaptedProduct } from '../types/InterfacesProducts'; 
+import { getProducts } from '../helpers/fetchPetitions'; 
 
 interface ProductContextProps {
   selectedProduct: AdaptedProduct | null;

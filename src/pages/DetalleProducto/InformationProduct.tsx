@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdaptedProduct } from '../../Utils/types/InterfacesProducts';
+import { AdaptedProduct } from '../../types/InterfacesProducts';
 import '/src/css/description.css'
 
 interface InformationProductProps {

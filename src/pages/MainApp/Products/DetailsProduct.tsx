@@ -3,7 +3,7 @@ import "/src/css/main-page.css";
 import { useContext, useState } from "react";
 import { ModalProduct } from "../modal/ModalProduct";
 import { ProductContext } from "../../../Contexts/ProductContext";
-import { AdaptedProduct } from "../../../Utils/types/InterfacesProducts";
+import { AdaptedProduct } from "../../../types/InterfacesProducts";
 
 interface DetailsProductProps {
   producto: AdaptedProduct;

@@ -19,7 +19,26 @@ body, html {
 }
 
 .carrusel{
-    margin-left: 20%;
+    margin: 20px 60px 10px 60px;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-carousel .slick-dots li button {
+    background-color: black;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border: 1px double #000;
+}
+
+:where(.css-dev-only-do-not-override-1uq9j6g).ant-carousel .slick-dots li.slick-active button{
+    background-color: black;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000;
 }
 
 .group-products {
@@ -38,7 +57,7 @@ body, html {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 16px;
     padding: 0;
-    margin-left: 40px;
+    margin-left: 12px;
   }
 
 .item-product {
@@ -78,7 +97,8 @@ body, html {
 
 .favorite{
     position: absolute;
-    top: 20px;
+    top: -20px;
+    right: 15px;
     left: 250px;
     color: #7D879C;
     z-index: 1000;
@@ -162,6 +182,53 @@ body, html {
     padding: 10px 10px 20px 10px;
 }
 
+.list-products{
+    height: 600px;
+    overflow: auto;
+    scrollbar-color: transparent;
+    top: 20px;  
+    margin-left: 20px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.more-sold{
+    margin-top: 50px;
+    text-align: center;
+    height: 550px;
+    overflow: hidden;
+    width: 95%;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button.slick-arrow.slick-prev::after, button.slick-arrow.slick-prev,
+button.slick-arrow.slick-next::after, button.slick-arrow.slick-next{
+    color: black;
+    width: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+button.slick-arrow.slick-prev, button.slick-arrow.slick-next{
+    padding: 20PX;
+    border-radius: 50%;
+    
+}
+
+button.slick-arrow.slick-prev::after, button.slick-arrow.slick-prev{
+    margin-left: -8px;
+}
+
+button.slick-arrow.slick-next::after, button.slick-arrow.slick-next{
+    margin-right: -30px;
+}
+
+
 @media (max-width:768px){
     .main-category {
         display: flex;
@@ -175,6 +242,14 @@ body, html {
     .search{
         margin-left: 0;
     }
-
+    .group-products{
+        width: 100%;
+    }
+    .content-product{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
 }

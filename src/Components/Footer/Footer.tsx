@@ -1,9 +1,9 @@
 import "/src/css/footer.css";
 import { Input } from "antd";
 import {
-  FacebookOutlined,
+  FacebookFilled,
   InstagramOutlined,
-  LinkedinOutlined,
+  LinkedinFilled,
   WhatsAppOutlined,
 } from "@ant-design/icons";
 
@@ -53,9 +53,9 @@ export const Footer = () => {
           <h2>Convercemos!</h2>
           <span>Lorem ipsum dolor sit amet</span>
           <div className="redes">
-            <FacebookOutlined />
+            <FacebookFilled />
             <InstagramOutlined />
-            <LinkedinOutlined />
+            <LinkedinFilled />
             <WhatsAppOutlined />
           </div>
         </div>

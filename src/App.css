@@ -14,9 +14,10 @@
 .group-btn-access{
   width: 100%;
   position: absolute;
-  left: 65vw;
+  right: 17vw;
   display: flex;
   align-items: center;
+  justify-content: end;
   column-gap: 15px;
 }
 
@@ -75,8 +76,8 @@
   width: 250px;
   height: 250px;
   text-align: center;
-  right:-5%;
-  top: -17%;
+  right: -100px;
+  top: -110px;
   box-shadow: 0 0 25px #494444;
 }
 
@@ -93,13 +94,17 @@
   margin-right: 60px;
 }
 
-@media (max-width:720px){
+@media (max-width: 768px){
   .circle-buy{
-    width: 180px;
-    height: 180px;
-    top: -10%;
-    right: -10%;
+    display: none;
+  }
+  .group-btn-access{
+    right: 1%;
+  }
+  .logo{
+    margin-left: -1%;
   }
 }
+
 
 

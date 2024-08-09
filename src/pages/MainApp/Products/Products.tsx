@@ -3,10 +3,10 @@ import { Card, FloatButton, Space } from "antd";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { ProductContext } from "../../../Contexts/ProductContext";
 import { useFavorites } from "../../../Contexts/FavoriteContext";
-import { getProducts } from "../../../services/products";
+import { getProducts } from "../../../helpers/fetchPetitions";
 import "/src/css/main-page.css";
 import { DetailsProduct } from "./DetailsProduct";
-import { AdaptedProduct, Product } from "../../../Utils/types/InterfacesProducts";
+import { AdaptedProduct, Product } from "../../../types/InterfacesProducts";
 import { useFilter } from "../../../Contexts/FilterContext";
 import { useCategories } from "../../../Contexts/CategoryContext";
 
@@ -24,7 +24,7 @@ export const Products: React.FC = () => {
           let products: Product[] = [];
             categories?.map(async (category) => {
                 if (category.name === pathName) {
-                  if (minPrice !== null && maxPrice !== null) {
+                  if (minPrice !== null && maxPrice !== null && minPrice<maxPrice) {
                     products = await getProducts(category.id, minPrice, maxPrice);
                 } else{
                   products = await getProducts(category.id, null, null);
@@ -119,7 +119,7 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="list-products">
       {sortedProducts.length > 0 ? (
         <ul className="list-of-products">
           {sortedProducts.map((product, index: number) => {
@@ -151,6 +151,10 @@ export const Products: React.FC = () => {
                       alt={product.title}
                       src={product.images[0]}
                       onClick={() => handleClickDescription(product)}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).onerror = null;
+                        (e.target as HTMLImageElement).src = "https://media.istockphoto.com/id/1128826884/es/vector/ning%C3%BAn-s%C3%ADmbolo-de-vector-de-imagen-falta-icono-disponible-no-hay-galer%C3%ADa-para-este-momento.jpg?s=612x612&w=0&k=20&c=9vnjI4XI3XQC0VHfuDePO7vNJE7WDM8uzQmZJ1SnQgk=";
+                      }}
                     />
                   }
                 >

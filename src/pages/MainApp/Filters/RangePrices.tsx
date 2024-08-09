@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useFilter } from "../../../Contexts/FilterContext";
 import "/src/css/filters.css";
+import { Input } from "antd";
 
 export const RangePrices = () => {
   const { setMinPrice, setMaxPrice } = useFilter();
@@ -26,19 +27,17 @@ export const RangePrices = () => {
 
   return (
     <div className="range-prices">
-      <input
+      <Input placeholder="100" 
         type="number"
         className="min-price"
-        placeholder="Min Price"
-        onChange={handleMinPriceChange}
-      />
+        onChange={handleMinPriceChange}/>
+    
       <span>-</span>
-      <input
+      <Input placeholder="500" 
         type="number"
         className="max-price"
-        placeholder="Max Price"
-        onChange={handleMaxPriceChange}
-      />
+        onChange={handleMaxPriceChange}/>
+      
     </div>
   );
 };

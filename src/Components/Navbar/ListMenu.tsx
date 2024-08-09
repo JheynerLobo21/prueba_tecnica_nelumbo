@@ -2,11 +2,11 @@ import { Menu } from "antd";
 import { useNavigate } from "react-router-dom";
 import "/src/App.css";
 import { useContext, useEffect } from "react";
-import { getCategories } from "../../services/products";
+import { getCategories } from "../../helpers/fetchPetitions";
 import { ProductContext } from "../../Contexts/ProductContext";
 import { useFilter } from "../../Contexts/FilterContext";
 import { useCategories } from "../../Contexts/CategoryContext";
-import { Category } from "../../Utils/types/InterfacesProducts";
+import { Category } from "../../types/InterfacesProducts";
 
 
 export const ListMenu: React.FC = () => {

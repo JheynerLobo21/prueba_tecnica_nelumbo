@@ -1,7 +1,5 @@
 /*import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { products } from "../../../Constants/Constants";
-import { Categorias } from "../../../Constants/Constants";
 import { Checkbox } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { useFilter } from "../../../Contexts/FilterContext";
