@@ -2,8 +2,8 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ProductProvider } from '../src/Contexts/ProductContext';
-import { ProductCatalogShop } from './Components/MainApp/ProductCatalogShop';
-import { Home } from './Components/MainApp/Home';
+import { ProductCatalogShop } from './pages/MainApp/ProductCatalogShop';
+import { Home } from './pages/MainApp/Home';
 import { FilterProvider } from './Contexts/FilterContext';
 import { FavoritesProvider } from './Contexts/FavoriteContext';
 import { CategoryProvider } from './Contexts/CategoryContext';

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../Contexts/ProductContext";
 export const Credito = () => {
   const { precioSemanal } = useContext(ProductContext);
-  console.log(precioSemanal)
+
   return (
     <>
       <aside className="figures">

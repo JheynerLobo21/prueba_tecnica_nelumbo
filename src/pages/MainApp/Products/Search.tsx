@@ -3,17 +3,18 @@ import { Input, Select } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import '/src/css/main-page.css';
 import { useFilter } from '../../../Contexts/FilterContext';
+import { useCategories } from '../../../Contexts/CategoryContext';
 
 const { Option } = Select;
 
 export const Search = () => {
   const { setSearchName, setCategory } = useFilter();
+  const { categories } = useCategories();
   const [searchValue, setSearchValue] = useState('');
   const [category, setCategoryValue] = useState('todas');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    console.log(searchValue);
     setSearchName(e.target.value);
   };
 
@@ -32,18 +33,18 @@ export const Search = () => {
   );
 
   const selectAfter = (
-    <Select value={category} onChange={handleCategoryChange}  className='slt-search'>
-      <Option value="todas">Todas las categorias</Option>
-      <Option value="celulares">Celulares</Option>
-      <Option value="computadores">Computadores</Option>
-      <Option value="motocicletas">Motocicletas</Option>
+    <Select value={category} onChange={handleCategoryChange} className='slt-search'>
+      <Option value="todas">Todas las categorías</Option>
+      {categories?.map(cat => (
+        <Option key={cat.id} value={cat.name}>{cat.name}</Option>
+      ))}
     </Select>
   );
 
   return (
     <div className='search'>
       <Input
-       className='input-search'
+        className='input-search'
         prefix={prefix}
         addonAfter={selectAfter}
         placeholder='Buscar producto'

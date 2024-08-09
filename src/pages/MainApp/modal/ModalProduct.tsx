@@ -1,6 +1,6 @@
 import { Modal, Divider, Button } from "antd";
 import React, { useState } from "react";
-import { AdaptedProduct } from "../../../types/InterfacesProducts";
+import { AdaptedProduct } from "../../../Utils/types/InterfacesProducts";
 import "/src/css/modal.css";
 
 interface ModalProductProps {

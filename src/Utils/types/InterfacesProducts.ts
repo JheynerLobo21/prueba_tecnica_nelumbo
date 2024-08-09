@@ -2,19 +2,17 @@ export interface Category {
     id: number;
     name: string;
     image: string;
-    creationAt: string;
-    updatedAt: string;
   }
   
   export interface AdaptedProduct {
     id: number;
     title: string;
     price: number;
-    desription: string;
+    description: string;
     images: string[];
     creationAt: string;
     updatedAt: string;
-    marca: string;
+    marcas: string;
     tipo: string;
     reviews: number;
     fabricante: string;
@@ -35,4 +33,14 @@ export interface Category {
     precioFinal: number;
     precioMensual: number;
     precioSemanal: number;
+  }
+
+  export interface Product{
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    images: string[];
+    creationAt: string;
+    updatedAt: string;
   }

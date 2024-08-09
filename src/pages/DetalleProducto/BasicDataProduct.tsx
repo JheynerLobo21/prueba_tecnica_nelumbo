@@ -12,7 +12,7 @@ import { Products } from "../MainApp/Products/Products";
 export const BasicDataProduct = () => {
   const { selectedProduct, precioFinal, precioMensual, precioSemanal } = useContext(ProductContext);
   const { favoriteProducts, toggleFavorite } = useFavorites();
-  console.log(selectedProduct)
+  
   if (!selectedProduct) {
     return <div>No product selected</div>;
   }
@@ -42,7 +42,7 @@ export const BasicDataProduct = () => {
         <div className="imgs-test">
           {selectedProduct.images.map((image, index) => (
             <div className="catalog-img" key={index}>
-              <img className="imgs-products" src={image} alt={image} />
+              <img className="imgs-products" src={image} alt="image product" />
             </div>
           ))}
         </div>

@@ -27,6 +27,7 @@ body, html {
 }
 
 .search {
+    margin: auto;
     width: 37% ;
     margin-left: 45px;
     margin-top: 25px;

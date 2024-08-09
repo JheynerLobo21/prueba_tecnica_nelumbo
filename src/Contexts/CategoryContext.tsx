@@ -1,11 +1,9 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { createContext, ReactNode, useState, useContext } from 'react';
 
 interface Category {
   id: number;
   name: string;
-  imagen: string;
-  creationAt: string;
-  updatedAt: string;
+  image: string;
 }
 
 interface CategoryContextType {
@@ -13,10 +11,7 @@ interface CategoryContextType {
   setCategories: (categories: Category[] | null) => void;
 }
 
-export const CategoryContext = createContext<CategoryContextType | undefined>({
-  categories: null,
-  setCategories:()=>{}
-});
+export const CategoryContext = createContext<CategoryContextType | undefined>(undefined);
 
 export const CategoryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [categories, setCategories] = useState<Category[] | null>(null);
@@ -26,4 +21,12 @@ export const CategoryProvider: React.FC<{ children: ReactNode }> = ({ children }
       {children}
     </CategoryContext.Provider>
   );
+};
+
+export const useCategories = () => {
+  const context = useContext(CategoryContext);
+  if (!context) {
+    throw new Error('useCategories debe ser usado dentro de un CategoryProvider');
+  }
+  return context;
 };

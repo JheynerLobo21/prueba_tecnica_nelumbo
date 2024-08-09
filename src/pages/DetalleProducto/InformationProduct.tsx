@@ -1,9 +1,9 @@
 import React from 'react';
-import { Product } from '../../Constants/Constants';
+import { AdaptedProduct } from '../../Utils/types/InterfacesProducts';
 import '/src/css/description.css'
 
 interface InformationProductProps {
-  selectedProduct: Product;
+  selectedProduct: AdaptedProduct;
 }
 
 export const InformationProduct: React.FC<InformationProductProps> = ({ selectedProduct }) => {

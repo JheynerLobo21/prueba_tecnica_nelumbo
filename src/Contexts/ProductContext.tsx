@@ -1,14 +1,15 @@
-import React, { createContext, useState, ReactNode } from 'react';
-import { Product, products } from '../Constants/Constants';
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
+import { AdaptedProduct } from '../Utils/types/InterfacesProducts'; 
+import { getProducts } from '../services/products'; 
 
 interface ProductContextProps {
-  selectedProduct: Product | null;
-  setSelectedProduct: (product: Product | null, precioFinal?: number | null, precioMensual?: number | null, precioSemanal?: number | null) => void;
+  selectedProduct: AdaptedProduct | null;
+  setSelectedProduct: (product: AdaptedProduct | null, precioFinal?: number | null, precioMensual?: number | null, precioSemanal?: number | null) => void;
   precioFinal: number | null;
   precioMensual: number | null;
   precioSemanal: number | null;
-  allProducts: Product[];
-  getRelatedProducts: (category: string) => Product[];
+  allProducts: AdaptedProduct[];
+  getRelatedProducts: (category: string) => AdaptedProduct[];
   resetProduct: () => void;
 }
 
@@ -24,11 +25,24 @@ export const ProductContext = createContext<ProductContextProps>({
 });
 
 export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [selectedProduct, setSelectedProductState] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProductState] = useState<AdaptedProduct | null>(null);
   const [precioFinal, setPrecioFinal] = useState<number | null>(null);
   const [precioMensual, setPrecioMensual] = useState<number | null>(null);
   const [precioSemanal, setPrecioSemanal] = useState<number | null>(null);
-  const allProducts = Object.values(products).flat();
+  const [allProducts, setAllProducts] = useState<AdaptedProduct[]>([]);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const products = await getProducts();
+        setAllProducts(products);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    loadProducts();
+  }, []);
 
   const resetProduct = () => {
     setSelectedProductState(null);
@@ -37,7 +51,7 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
     setPrecioSemanal(null);
   };
 
-  const setSelectedProduct = (product: Product | null, precioFinal: number | null = null, precioMensual: number | null = null, precioSemanal: number | null = null) => {
+  const setSelectedProduct = (product: AdaptedProduct | null, precioFinal: number | null = null, precioMensual: number | null = null, precioSemanal: number | null = null) => {
     setSelectedProductState(product);
     setPrecioFinal(precioFinal);
     setPrecioMensual(precioMensual);

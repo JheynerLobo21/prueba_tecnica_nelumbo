@@ -3,7 +3,7 @@ import "/src/css/main-page.css";
 import { useContext, useState } from "react";
 import { ModalProduct } from "../modal/ModalProduct";
 import { ProductContext } from "../../../Contexts/ProductContext";
-import { AdaptedProduct } from "../../../types/InterfacesProducts";
+import { AdaptedProduct } from "../../../Utils/types/InterfacesProducts";
 
 interface DetailsProductProps {
   producto: AdaptedProduct;
@@ -12,10 +12,8 @@ interface DetailsProductProps {
 export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
   const { setSelectedProduct} = useContext(ProductContext);
   const [openModal, setOpenModal] = useState(false);
-  console.log(producto);
   const {
     title,
-    reviews,
     promocion = 0,
     precioSemanal,
     precioMensual
@@ -37,9 +35,9 @@ export const DetailsProduct: React.FC<DetailsProductProps> = ({ producto }) => {
 
   const precioOriginal =
     promocion !== 0
-      ? ((producto.price * (100 + promocion)) / 100).toFixed(2)
-      : undefined;
-
+      ? ((producto.price * (100 + promocion)) / 100)
+      : producto.price;
+    console.log(precioOriginal);
  
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { products } from "../../../Constants/Constants";
 import { Categorias } from "../../../Constants/Constants";
@@ -45,4 +45,4 @@ export const Checkbrand = () => {
       ))}
     </div>
   );
-};
+};*/

@@ -6,6 +6,7 @@ import "/src/css/description.css";
 
 export const Redireccion = () => {
   const { setSelectedProduct, selectedProduct } = useContext(ProductContext);
+  console.log(selectedProduct);
   const location = useLocation();
   const category = location.pathname.split("/")[1];
 
@@ -21,8 +22,8 @@ export const Redireccion = () => {
       <Breadcrumb
         items={[
           { title: <span>{category}</span> },
-          { title: <span>{selectedProduct?.marca}</span> },
-          { title: <span>{selectedProduct?.nombre}</span> },
+          { title: <span>{selectedProduct?.marcas}</span> },
+          { title: <span>{selectedProduct?.title}</span> },
         ]}
       />
     </div>
