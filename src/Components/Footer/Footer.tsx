@@ -32,7 +32,7 @@ export const Footer = () => {
             <img
               style={{ borderRadius: "5px", color: "black" }}
               src="/public/macropay_logo.png"
-              alt=""
+              alt="logo-macropay"
             />
             <div className="data-1">
               <span>Envíos y devoluciones</span>
@@ -50,7 +50,7 @@ export const Footer = () => {
           <img className="smile" src="/public/smile.png" alt="smile" />
         </div>
         <div className="content-3">
-          <h2>Convercemos!</h2>
+          <h2>Conversemos!</h2>
           <span>Lorem ipsum dolor sit amet</span>
           <div className="redes">
             <FacebookFilled />

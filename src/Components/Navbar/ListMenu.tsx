@@ -61,7 +61,7 @@ export const ListMenu: React.FC = () => {
       className="item-menu"
       theme="light"
       mode="horizontal"
-      defaultSelectedKeys={["2"]}
+      defaultSelectedKeys={["0"]}
       items={items}
       style={{ flex: 1, minWidth: 0, textTransform: "capitalize", color: "blue", flexWrap:"wrap"}}
     />

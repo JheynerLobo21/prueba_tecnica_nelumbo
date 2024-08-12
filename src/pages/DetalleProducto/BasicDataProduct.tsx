@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../Contexts/ProductContext";
 import { useFavorites } from "../../Contexts/FavoriteContext";
 import "/src/css/description.css";
-import { Button, FloatButton, Rate, Slider, Space, Tabs, TabsProps } from "antd";
+import { Button, FloatButton, Rate, Slider, Tabs, TabsProps } from "antd";
 import { CheckOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Credito } from "./Credito";
 import { InformationProduct } from "./InformationProduct";
@@ -42,12 +42,16 @@ export const BasicDataProduct = () => {
         <div className="imgs-test">
           {selectedProduct.images.map((image, index) => (
             <div className="catalog-img" key={index}>
-              <img className="imgs-products" src={image} alt="image product" />
+              <img className="imgs-products" src={image} alt="image product"
+              onError={(e) => {
+                (e.target as HTMLImageElement).onerror = null;
+                (e.target as HTMLImageElement).src =
+                  "https://media.istockphoto.com/id/1128826884/es/vector/ning%C3%BAn-s%C3%ADmbolo-de-vector-de-imagen-falta-icono-disponible-no-hay-galer%C3%ADa-para-este-momento.jpg?s=612x612&w=0&k=20&c=9vnjI4XI3XQC0VHfuDePO7vNJE7WDM8uzQmZJ1SnQgk=";
+              }} />
             </div>
           ))}
         </div>
         <div className="img-principal">
-          <Space>
             {isFavorite ? (
               <HeartFilled
                 className="favorite"
@@ -61,11 +65,15 @@ export const BasicDataProduct = () => {
                 style={{ fontSize: "28px" }}
               />
             )}
-          </Space>
           <img
             className="main-img"
             alt="example"
             src={selectedProduct.images[0]}
+            onError={(e) => {
+              (e.target as HTMLImageElement).onerror = null;
+              (e.target as HTMLImageElement).src =
+                "https://media.istockphoto.com/id/1128826884/es/vector/ning%C3%BAn-s%C3%ADmbolo-de-vector-de-imagen-falta-icono-disponible-no-hay-galer%C3%ADa-para-este-momento.jpg?s=612x612&w=0&k=20&c=9vnjI4XI3XQC0VHfuDePO7vNJE7WDM8uzQmZJ1SnQgk=";
+            }}
           />
           {selectedProduct.promocion !== 0 && (
             <FloatButton
@@ -177,8 +185,8 @@ export const BasicDataProduct = () => {
         </section>
       </div>
       <h5 className="title-related">Productos relacionados</h5>
-      <div style={{marginLeft:"20px", marginRight:"60px"}}>
-        <Products />
+      <div className="related-products" style={{marginLeft:"20px", marginRight:"60px"}}>
+        <Products cantidad={null}/>
       </div>
     </div>
   );

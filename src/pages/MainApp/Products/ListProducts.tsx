@@ -7,7 +7,7 @@ export const ListProducts = () => {
   return (
     <div className="content-product" style={{width: "70vw", overflow:"hidden"}}>
       <Search />
-      <Products/>
+      <Products cantidad={null}/>
     </div>
   );
 };

@@ -1,18 +1,23 @@
-.figures{
+:root {
+    --gold-color: gold;
+    --blue-color: #0047BB;
+}
+
+.figures {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.circle{
-    background: gold;
+.circle {
+    background: var(--gold-color);
     border-radius: 50%;
     width: 140px;
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0047BB;
+    color: var(--blue-color);
     z-index: 2;
     margin-left: -80px;
     margin-top: 25px;
@@ -21,7 +26,7 @@
 .trapezoid {
     width: 150px;
     height: 140px;
-    background-color: #0047BB;
+    background-color: var(--blue-color);
     clip-path: polygon(0 100%, 0 60px, 100% 0px, 100% 100%);
     border-radius: 0 15px 15px 0;
     z-index: 1;
@@ -34,24 +39,22 @@
     text-align: end;
 }
 
-.price-week, .price-week2{
+.price-week, .price-week2 {
     margin-left: 60px;
     color: white;
 }
 
-.price-week{
+.price-week {
     font-size: 30px;
     margin-top: 50px;
 }
 
-.price-week2{
+.price-week2 {
     margin-top: -30px;
     text-align: end;
 }
 
-
-
-.data-credit{
+.data-credit {
     display: flex;
     background: white;
     width: 100%;
@@ -61,7 +64,7 @@
     border-bottom-right-radius: 5px;
 }
 
-.item-data-credit{
+.item-data-credit {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -71,34 +74,34 @@
     row-gap: 10px;
 }
 
-.id-item-credit{
-padding:5px; 
-background:gray;
-color:white;
-border-radius:50%;
-width: 25px;
-height: 25px;
-display: flex;
-justify-content: center;
-align-items: center;
+.id-item-credit {
+    padding: 5px;
+    background: gray;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.to-credit{
+.to-credit {
     display: flex;
     align-self: flex-end;
     margin-right: 2%;
 }
 
-.icon-credit{
+.icon-credit {
     float: left;
     z-index: -1;
 }
 
-.want-credit{
+.want-credit {
     width: fit-content;
     height: 40px;
-    background: gold;
+    background: var(--gold-color);
     align-self: flex-end;
-    color: #0047BB;
+    color: var(--blue-color);
     margin-top: -30px;
 }

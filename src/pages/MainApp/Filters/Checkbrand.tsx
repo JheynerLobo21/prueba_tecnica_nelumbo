@@ -1,22 +1,31 @@
-/*import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { Checkbox } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { useFilter } from "../../../Contexts/FilterContext";
+import { ProductContext } from "../../../Contexts/ProductContext";
 import "/src/css/filters.css";
 
 export const Checkbrand = () => {
   const location = useLocation();
   const [brands, setBrands] = useState<string[]>([]);
   const { selectedBrands, setSelectedBrands } = useFilter();
+  const { allProducts } = useContext(ProductContext);
+  console.log(allProducts)
+
   useEffect(() => {
-    const category = location.pathname.split("/")[1] as keyof Categorias;
-    const productos = products[category] || [];
+    const categoryName = location.pathname.split("/")[1].replace("-", " ");
+    
+    const filteredProducts = allProducts.filter(
+      (product) => product.category.name === categoryName
+    );
     const uniqueBrands = [
-      ...new Set(productos.map((producto) => producto.marca)),
+      ...new Set(filteredProducts.map((producto) => producto.marcas)),
     ];
+
     setBrands(uniqueBrands);
-  }, [location.pathname]);
+    console.log(brands);
+  }, [location.pathname, allProducts]);
 
   const handleChange = (e: CheckboxChangeEvent) => {
     const brand = e.target.value as string;
@@ -43,4 +52,5 @@ export const Checkbrand = () => {
       ))}
     </div>
   );
-};*/
+};
+

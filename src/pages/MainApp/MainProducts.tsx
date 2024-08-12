@@ -5,6 +5,7 @@ import { Products } from "./Products/Products"
 import '/src/css/main-page.css'
 
 export const MainProducts = () => {
+  const cantidad=4;
   return (
     <>
     <main className="main-category">
@@ -18,7 +19,7 @@ export const MainProducts = () => {
     <Offerts/>
     <section className="more-sold">
      <h2>Nuestro Productos Más Vendidos</h2>
-     <Products/>
+     <Products cantidad={cantidad}/>
     </section>
     
     </>

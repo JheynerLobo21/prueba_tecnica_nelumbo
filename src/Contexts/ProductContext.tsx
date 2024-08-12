@@ -1,6 +1,5 @@
-import React, { createContext, useState, ReactNode, useEffect } from 'react';
-import { AdaptedProduct } from '../types/InterfacesProducts'; 
-import { getProducts } from '../helpers/fetchPetitions'; 
+import React, { createContext, useState, ReactNode } from 'react';
+import { AdaptedProduct } from '../types/InterfacesProducts';
 
 interface ProductContextProps {
   selectedProduct: AdaptedProduct | null;
@@ -9,6 +8,7 @@ interface ProductContextProps {
   precioMensual: number | null;
   precioSemanal: number | null;
   allProducts: AdaptedProduct[];
+  setAllProducts: (products: AdaptedProduct[]) => void;
   getRelatedProducts: (category: string) => AdaptedProduct[];
   resetProduct: () => void;
 }
@@ -20,6 +20,7 @@ export const ProductContext = createContext<ProductContextProps>({
   precioMensual: null,
   precioSemanal: null,
   allProducts: [],
+  setAllProducts: () => {},
   getRelatedProducts: () => [],
   resetProduct: () => {},
 });
@@ -30,19 +31,6 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [precioMensual, setPrecioMensual] = useState<number | null>(null);
   const [precioSemanal, setPrecioSemanal] = useState<number | null>(null);
   const [allProducts, setAllProducts] = useState<AdaptedProduct[]>([]);
-
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        const products = await getProducts();
-        setAllProducts(products);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    loadProducts();
-  }, []);
 
   const resetProduct = () => {
     setSelectedProductState(null);
@@ -63,7 +51,7 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
   };
 
   return (
-    <ProductContext.Provider value={{ selectedProduct, setSelectedProduct, precioFinal, precioMensual, precioSemanal, allProducts, getRelatedProducts, resetProduct }}>
+    <ProductContext.Provider value={{ selectedProduct, setSelectedProduct, precioFinal, precioMensual, precioSemanal, allProducts, setAllProducts, getRelatedProducts, resetProduct }}>
       {children}
     </ProductContext.Provider>
   );

@@ -1,3 +1,9 @@
+:root {
+    --gold-color: gold;
+    --white-color: white;
+}
+
+
 .links{
     display: flex;
     flex-direction: row;
@@ -5,8 +11,6 @@
     column-gap: 25px;
     margin-top: 20px;
 }
-
-
 
 .floating-button-description{
     position: absolute;
@@ -20,15 +24,7 @@
     align-items: center;
   }
 
-.favorite{
-    position: relative;
-    margin-bottom: 370px;
-    margin-right: -30px;
-    margin-left: 2px;
-    color: black;
-    z-index: 1000;
-    font-size: 20px;
-}
+
 
 .basic-data{
     display: flex;
@@ -54,7 +50,7 @@
 
 .catalog-img{
     margin-top: 10px;
-    background-color: white;
+    background-color: var(--white-color);
     width: 100px;
     height: 100px;
     border-radius: 5px;
@@ -65,7 +61,7 @@
 
 .catalog-img-description{
     margin-top: 10px;
-    background-color: white;
+    background-color: var(--white-color);
     width: 250px;
     height: 300px;
     border-radius: 5px;
@@ -79,16 +75,30 @@
     position: relative;
     height: 430px;
     width: 300px;
-    background: white;
+    background:  var(--white-color);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.img-principal .favorite, .img-principal .favorite-active{
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    color: black; 
+    z-index: 1;
+}
+
+.favorite{
+color: #7D879C;
+}
+
 .main-img{
-    width: 280px;
-    height: 400px;
+    width: 300px;
+    height: 100%;
+    border-radius: 8px;
 }
 
 .imgs-products{
@@ -136,7 +146,7 @@
 }
 
 .see-more {
-    color: blue;
+    color: #0047BB;
     margin-top: -5px;
     font-style: italic;
 }
@@ -208,7 +218,7 @@
 
 .card-info-credit{
     z-index: -3;
-    background-color: white;
+    background-color: var(--white-color);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -224,7 +234,7 @@
 
 .btn-credit{
     margin-top: 5px;
-    background: gold;
+    background: var(--gold-color);;
     color: #0047BB;
 }
 
@@ -237,4 +247,37 @@
     position: absolute;
     display: grid;
    grid-template-columns: repeat(minmax(200px, 1fr));
+}
+
+@media (max-width:768px){
+    .basic-data{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .imgs-test{
+        flex-direction: row;
+        gap: 10px;
+        margin: 0;
+    }
+    .links{
+        column-gap: 3px;
+    }
+    .links button{
+        margin-left: 10px;
+    }
+    .aside-data{
+        width: 85%;
+    }
+    .figures{
+        margin-left: 20px;
+    }
+    .imgs-test-description{
+        display: none;
+    }
+    .card-info-credit{
+        margin-top: 10px;
+    }
+    .related-products{
+        margin: 0;
+    }
 }

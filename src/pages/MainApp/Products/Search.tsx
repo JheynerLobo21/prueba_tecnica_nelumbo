@@ -33,7 +33,7 @@ export const Search = () => {
   );
 
   const selectAfter = (
-    <Select value={category} onChange={handleCategoryChange} className='slt-search'>
+    <Select value={category} onChange={handleCategoryChange} disabled={searchValue===""?true:false} className='slt-search'>
       <Option value="todas">Todas las categorías</Option>
       {categories?.map(cat => (
         <Option key={cat.id} value={cat.name}>{cat.name}</Option>

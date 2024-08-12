@@ -1,6 +1,6 @@
 import type { CollapseProps } from "antd";
 import { Collapse, Rate } from "antd";
-//import { Checkbrand } from "./Checkbrand";
+import { Checkbrand } from "./Checkbrand";
 import { RangePrices } from "./RangePrices";
 import { useFilter } from "../../../Contexts/FilterContext";
 
@@ -20,7 +20,7 @@ const items: CollapseProps["items"] = [
   {
     key: "1",
     label: "Marcas",
-    //children: <Checkbrand />,
+    children: <Checkbrand />,
     showArrow: false,
   },
   {
@@ -43,6 +43,6 @@ export const Collapses = () => {
   };
 
   return (
-    <Collapse defaultActiveKey={["1"]} onChange={onChange} items={items} style={{color:"#013E9B"}}/>
+    <Collapse  onChange={onChange} items={items} style={{color:"#013E9B"}}/>
   );
 };

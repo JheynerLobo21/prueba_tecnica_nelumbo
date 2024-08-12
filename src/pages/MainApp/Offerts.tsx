@@ -13,10 +13,10 @@ const contentStyle: React.CSSProperties = {
 };
 export const Offerts = () => {
   return (
-    <div>
+    <div className="carrousel">
       <h3 style={{ textAlign: "center", margin:"40px 0 30px 0" }}>Ofertas y Promociones</h3>
       <div className="carrusel">
-      <Carousel arrows infinite={true} dots={true}>
+      <Carousel arrows infinite={true} dots={true} autoplay={true}>
         <div>
           <img
             style={contentStyle}
